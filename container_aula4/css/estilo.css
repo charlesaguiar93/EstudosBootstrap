@@ -1,0 +1,33 @@
+.container {
+    background-color: #f8f9fa; /* Light gray */
+    padding: 20px;
+  }
+
+  .container-sm {
+    background-color: #d1ecf1; /* Light blue */
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  .container-md {
+    background-color: #c3e6cb; /* Light green */
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  .container-lg {
+    background-color: #ffeeba; /* Light yellow */
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  .container-xl {
+    background-color: #f5c6cb; /* Light pink */
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .grid_system  div[class^="col"] {
+    border: 1px solid white;
+    background: #e4dcdc;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px
+ }
