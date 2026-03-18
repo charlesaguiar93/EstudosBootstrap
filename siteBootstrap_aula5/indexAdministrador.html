@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="br">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+  <!-- Página Dashboad Código(OTs de backend): Para o administrador da página. -->
+
+  <div class="container mt-5">
+    <div class="d-flex align-items-center mb-4">
+        <img src="/ProjetoTrilhaWeb/imgs/logo.png" alt="Logo coldigo" class="mr-3">
+        <h1>Coldigo Geladeiras - Administração</h1>
+    </div>
+
+    <nav class="mb-4">
+        <div class="nav nav-pills">
+            <div class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="registrosDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Registros</a>
+                <div class="dropdown-menu" aria-labelledby="registrosDropdown">
+                    <a class="dropdown-item" href="#" onclick="COLDIGO.carregaPagina('brand')">Marca</a>
+                    <a class="dropdown-item" href="indexProdutos.html" onclick="COLDIGO.carregaPagina('product')">Produto</a>
+                    <a class="dropdown-item" href="#">Usuário</a>
+                </div>
+            </div>
+            <div class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="gerenciarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Gerenciar</a>
+                <div class="dropdown-menu" aria-labelledby="gerenciarDropdown">
+                    <a class="dropdown-item" href="#">Compras</a>
+                    <a class="dropdown-item" href="indexContatos.html">Fale conosco</a>
+                </div>
+            </div>
+            <div class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="relatoriosDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Relatórios</a>
+                <div class="dropdown-menu" aria-labelledby="relatoriosDropdown">
+                    <a class="dropdown-item" href="#">Produtos</a>
+                    <a class="dropdown-item" href="#">Compras</a>
+                    <a class="dropdown-item" href="#">Fale conosco</a>
+                </div>
+            </div>
+            <a class="nav-link" href="#">Meus dados</a>
+            <a class="nav-link" href="indexSiteColdigo_Bootstrap.html">Sair</a>
+        </div>
+    </nav>
+
+    <h2>Registro de produtos</h2>
+    <form name="frmAddProduto" id="addProduto" class="frmInserir">
+        <fieldset class="border p-3 mb-3">
+            <legend class="w-auto">Novo Produto</legend>
+            <div class="form-group row">
+                <label for="categoria" class="col-sm-2 col-form-label">Categoria</label>
+                <div class="col-sm-10">
+                    <select name="categoria" class="form-control">
+                        <option value="">Selecione</option>
+                        <option value="1">Geladeira</option>
+                        <option value="2">Freezer</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="selMarca" class="col-sm-2 col-form-label">Marca</label>
+                <div class="col-sm-10">
+                    <select name="marcaId" id="selMarca" class="form-control">
+                        <option value="" class="buscando">Selecione uma marca</option>
+                        <option value="1">Consul</option>
+                        <option value="2">Eletrolux</option>
+                        <option value="3">Brastemp</option>
+
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="modelo" class="col-sm-2 col-form-label">Modelo</label>
+                <div class="col-sm-10">
+                    <input type="text" name="modelo" class="form-control">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="capacidade" class="col-sm-2 col-form-label">Capacidade(1)</label>
+                <div class="col-sm-10">
+                    <input type="text" name="capacidade" class="form-control">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="valor" class="col-sm-2 col-form-label">Valor (R$)</label>
+                <div class="col-sm-10">
+                    <input type="text" name="valor" class="form-control">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-10 offset-sm-2">
+                    <button type="button" class="btn btn-primary" onclick="COLDIGO.produto.cadastrar()">Cadastrar</button>
+                    <button type="reset" class="btn btn-secondary">Limpar</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+
+    <h3>Produtos registrados</h3>
+    <form id="filtraProduto" class="frmFiltrar">
+        <fieldset class="border p-3 mb-3">
+            <legend class="w-auto">Filtrar</legend>
+            <div class="form-group row">
+                <div class="col-sm-10">
+                    <input type="text" name="txtbusca" id="campoBuscaProduto" class="form-control" placeholder="Pesquise pelo modelo">
+                </div>
+                <div class="col-sm-2">
+                    <button type="button" class="btn btn-primary" onclick="COLDIGO.produto.buscar()">Buscar</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+
+    <table class="table table-bordered">
+        <thead class="thead-light">
+            <tr>
+                <th>Categoria</th>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Capacidade</th>
+                <th>Valor</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody id="listaProdutos">
+            <!-- Os produtos serão inseridos aqui dinamicamente -->
+            <tr>
+                <td>Geladeira</td>
+                <td>Marca A</td>
+                <td>Modelo X</td>
+                <td>500L</td>
+                <td>R$ 3000,00</td>
+                <td>
+                    <button class="btn btn-warning btn-sm" onclick="COLDIGO.produto.editar()"><i class="bi bi-pencil-fill"></i> Editar</button>
+                    <button class="btn btn-danger btn-sm" onclick="COLDIGO.produto.excluir()"><i class="bi bi-trash-fill"></i> Excluir</button>
+                </td>
+            </tr>
+            <!-- Exemplo de produto para visualização -->
+        </tbody>
+    </table>
+
+    <div id="modalEditaProduto" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Editar Produto</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form name="frmEditaProduto" id="editaProduto" class="frmEditar">
+                        <div class="form-group">
+                            <label for="selCategoriaEdicao">Categoria</label>
+                            <select name="categoria" id="selCategoriaEdicao" class="form-control">
+                                <option value="">Selecione</option>
+                                <option value="1">Geladeira</option>
+                                <option value="2">Freezer</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="selMarcaEdicao">Marca</label>
+                            <select name="marcaId" id="selMarcaEdicao" class="form-control">
+                                <option value="" class="buscando">Aguarde, buscando marcas...</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="modelo">Modelo</label>
+                            <input type="text" name="modelo" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="capacidade">Capacidade(1)</label>
+                            <input type="text" name="capacidade" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="valor">Valor (R$)</label>
+                            <input type="text" name="valor" class="form-control">
+                        </div>
+                        <input type="hidden" name="idProduto">
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary">Salvar mudanças</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
