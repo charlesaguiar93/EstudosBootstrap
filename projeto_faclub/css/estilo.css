@@ -88,7 +88,7 @@ header h1 {
     text-shadow: 0 2px 8px #000a;
 }
 nav {
-    margin: 12px 0 0 0;
+    margin: 0px 0 0 0;
     text-align: center;
 }
 nav a {
@@ -258,13 +258,7 @@ h3 {
     color: #c7c7c7;
     margin-bottom: 0;
 }
-footer {
-    text-align: center;
-    padding: 16px 0 10px 0;
-    color: #b6b6b6;
-    font-size: 1rem;
-    margin-top: 48px;
-}
+
 @media (max-width: 900px) {
     .intro-section {
         flex-direction: column;
@@ -281,3 +275,55 @@ footer {
     .dj-list { gap: 15px; }
     .galeria img { width: 95vw; max-width: 270px; }
 }
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+.table, .table-dark, .table-striped {
+    background-color: #0002;
+
+}
+
+.thead, .text-info, th {
+    color: #890ed6;
+}
+
+.div, .dj-card {
+        
+    cursor: pointer;
+   
+}
+
+.div:hover, .dj-card:hover {
+    background-color: #0004;
+    transition: background-color 0.3s ease;
+}
+
+.div, .jumbotron, .fanclub-section {
+    background-color: #0002;
+   
+}
+
+.div:hover, .jumbotron, .fanclub-section:hover {
+    background-color: #0004;
+    
+}
+
+/* os cards ficam da mesma altura */
+.dj-card {
+  min-height: 300px;
+}
+  
+  
+
+  
