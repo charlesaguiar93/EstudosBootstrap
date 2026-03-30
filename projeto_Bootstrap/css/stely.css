@@ -1,0 +1,125 @@
+html, body {
+    height: 100%;
+}
+
+
+body {
+  
+  background-image: url('');
+
+}
+
+.upload-box {
+  border: 2px dashed #e0b7a3;
+  border-radius: 10px;
+  background-color: #f8f1ed;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.upload-box:hover {
+  background-color: #f3e6df;
+}
+
+.upload-box.dragover {
+  border-color: #c98b6f;
+  background-color: #f0ddd4;
+}
+
+ body {
+      background: #fff8f5;
+      font-family: Arial, sans-serif;
+    }
+
+    .titulo {
+      color: #8b5e4a;
+      font-weight: bold;
+    }
+
+    .card-produto {
+      border: none;
+      border-radius: 18px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      transition: 0.3s;
+    }
+
+    .card-produto:hover {
+      transform: translateY(-5px);
+    }
+
+    .card-produto img {
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .btn-doce {
+      background: #d8a48f;
+      color: white;
+      border: none;
+    }
+
+    .btn-doce:hover {
+      background: #c58d77;
+      color: white;
+    }
+
+    .carrinho-box {
+      background: white;
+      border-radius: 18px;
+      padding: 20px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+      position: sticky;
+      top: 20px;
+    }
+
+    .item-carrinho {
+      border-bottom: 1px solid #f1dfd8;
+      padding: 10px 0;
+    }
+
+    .quantidade-box button {
+      width: 30px;
+      height: 30px;
+      border: none;
+      background: #f3d7cb;
+      color: #6f4a3a;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+    .btn-remover {
+      background: #f8d7da;
+      color: #842029;
+      border: none;
+      border-radius: 8px;
+      padding: 4px 8px;
+      font-size: 14px;
+    }
+
+    .btn-whats {
+      background: #25d366;
+      color: white;
+      border: none;
+    }
+
+    .btn-whats:hover {
+      background: #1ebe5d;
+      color: white;
+    }
+
+  
+body {
+    background-image: url('../assets/fundodourado.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 30px;
+}
+
